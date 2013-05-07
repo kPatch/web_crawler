@@ -150,7 +150,11 @@ pointPos = x.find('.')
 print x[:pointPos]
 
 
-# ############# ADDITIONAL QUESTIONS #############
+# ###################### ADDITIONAL QUESTIONS ######################
+# ###################### ADDITIONAL QUESTIONS ######################
+# ###################### ADDITIONAL QUESTIONS ######################
+# ###################### ADDITIONAL QUESTIONS ######################
+
 # Question 1
 # Given a string s which of the following expressions will print
 # 'Udacity'
@@ -165,7 +169,7 @@ s =  "C i d a t y U c i t y  d  a" #no spaces
 
 #ANSWER: 2),3),6)
 
-# Question 6
+# Question 2
 
 ##################################################
 #     Exercise by Sam the Great from forums!     #
@@ -190,6 +194,11 @@ fragA, fragB, fragC = 'supercalifragilisticexpialudacious', \
 ### THIS MUST BE ONE LINE ###
 part1, part2, part3 = fragB[fragB.find('U')], fragA[fragA.find('da'):fragA.find('i',-5)], (fragC[2]+fragC[1]+fragC[0])
 
+part1, part2, part3 = fragB[fragB.find('U')], fragA[fragA.find('da'):fragA.find('i',-5)], fragC[2::-1]
+
+#CORRECT ANSWER according to the Automated Grader
+part1, part2, part3 = fragB[1], fragA[-7:-4], fragC[2::-1]
+
 
 ### TEST CASES. PRESS RUN TO TEST ###
 deadline = part1 + part2[0:2] + part3[-1]
@@ -200,4 +209,132 @@ destination = part1 + part2[-1] + part3
 print "Test case 3 (Ucity): ", destination == 'Ucity'
 
 
+# Question 3
 
+###############################################
+#       Exercise by Websten from forums       #
+###############################################
+# To minimize errors when writing long texts with
+# complicated expressions you could replace 
+# the tricky parts with a marker. 
+# Write a program that takes a line of text and 
+# finds the first occurrence of a certain marker 
+# and replaces it with a replacement text. 
+# The resulting line of text should be stored in a variable. 
+# All input data will be given as variables.
+#
+# Replace the first occurrence of marker in the line below.
+# There will be at least one occurence of the marker in the
+# line of text. Put the answer in the variable 'replaced'.
+# Hint: You can find out the length of a string by command
+# len(string). We might test your code with different markers!
+
+# Example 1
+marker = "AFK"
+replacement = "away from keyboard"
+line = "I will now go to sleep and be AFK until lunch time tomorrow."
+
+# Example 2 # uncomment this to test with different input
+#marker = "EY"
+#replacement = "Eyjafjallajokull"
+#line = "The eruption of the volcano EY in 2010 disrupted air travel in Europe for 6 days."
+
+###
+# YOUR CODE BELOW. DO NOT DELETE THIS LINE
+###
+start = line.find(marker)
+end = line.find(marker[-1], start)
+
+replaced = line[0:start] + replacement + line[end+1:]
+
+print replaced
+# Example 1 output should be:
+#>>> I will now go to sleep and be away from keyboard until lunch time tomorrow.
+# Example 2 output should be:
+#>>> The eruption of the volcano Eyjafjallajokull in 2010 disrupted air travel in Europe for 6 days.
+
+
+# Question 4
+# Another grammar by Dimitri_GR
+# Given the following grammar in Backus-Naur Form,
+# which of the following sentence CAN NOT be derived from
+# this grammar start from -something-
+
+# | something -> word something
+# | something -> word
+# | word -> Hey!
+# | word -> Listen!
+
+# 1) Hey!
+# 2) Hey! Listen!
+# 3) Hey! Listen! Watch out!
+# 4) Hey! Hey! Hey! Listen! Listen! Listen! Hey!
+# 5) Hey! Hey! Hey! Listen!! Listen! Listen!
+
+# ANSWER 3),5)
+
+
+# Question 5 
+# Another grammar by Dimitri_GR
+# How many different sequences can be derived using this grammar
+# | something -> word something
+# | something -> word
+# | word -> Hey!
+# | word -> List!
+
+# 1) One
+# 2) Two
+# 3) Three
+# 4) Ten
+# 5) Hundred
+# 6) Indifinitely many
+
+# ANSWER: Many
+
+# Question 6
+# Pothonic Arithmetic by Anna Gajdora
+# Which of the following will print the correct results
+
+#	1) 	print 10/4.0		2)	print 10*1.0/4
+#	3)	print 10/4			4)	print 10/5
+#	5)	print 10.0/5		6)	print 10/50
+
+#	ANSWER 1),2),4),5)
+
+
+# Question 7 
+
+###############################################
+#       Exercise by Websten from forums       #
+###############################################
+# A palindrome is a word or a phrase that reads 
+# the same backwards as forwards. Make a program 
+# that checks if a word is a palindrome. 
+# If the word is a palindrome, print 0 to the terminal,
+# -1 otherwise. 
+# The word contains lowercase letters a-z and 
+# will be at least one character long.
+#
+### HINT! ###
+# You can read a string backwards with the following syntax:
+# string[::-1] - where the "-1" means one step back.
+# This exercise can be solved with only unit 1 knowledge
+# (no loops or conditions)
+
+#word = "madam"
+word = "madman"
+
+# test case 2
+# word = "madman" # uncomment this to test
+
+###
+# YOUR CODE HERE. DO NOT DELETE THIS LINE
+###
+
+##print word.find(word[::-1])
+is_palindrome = word.find(word[::-1])
+
+# TESTING
+print is_palindrome
+# >>> 0  # outcome if word == "madam"
+# >>> -1 # outcome if word == "madman"
