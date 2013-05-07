@@ -1,0 +1,13 @@
+#Notes of working with strings
+
+word = 'assume'
+
+print word[3] # prints 'u'
+# It is the same as
+print word[3:4]
+
+print[3:] # prints 'ume'
+print[:3] # prints 'ass' #:D
+
+# print 'HELLO' + 9   // It is not valid HOWEVER,
+# print 'HELLO' * 9   // Will print 'HELLO' 9 times
