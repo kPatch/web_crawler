@@ -2,8 +2,7 @@
 
 word = 'assume'
 
-print word[3] # prints 'u'
-# It is the same as
+print word[3] # prints 'u'  # It is the same as
 print word[3:4]
 
 print[3:] # prints 'ume'
@@ -11,3 +10,28 @@ print[:3] # prints 'ass' #:D
 
 # print 'HELLO' + 9   // It is not valid HOWEVER,
 # print 'HELLO' * 9   // Will print 'HELLO' 9 times
+
+
+# ------ Finding Strings in Strings ------
+# <string>.find(<string>)
+# It returns the first postion where the target appears
+# If target is not found, returns -1
+
+# EXAMPLE
+pythagoras = 'There is geometry in the humming of the strings, there is music in the spacing of the spheres.'
+print pythagoras.find('string')   # returns 40
+print pythagoras[40:]   # prints strings, ......
+
+
+# ------ Finding String in Strings w/ numbers ------
+# <string>.find(<string>, <number>)
+# the <number> gives the position in the search string where the target string should be looked for.
+# returns -1 is target string is not found
+
+#EXAMPLE
+danton = "De l'audace, encore de l'audace, toujours de l'audace."
+print danton.find('audace')     # returns 5
+print danton.find('audace', 0)  # returns 5
+print danton.find('audace', 5)  # returns 5
+print danton.find('audace', 6)  # returns 25
+
